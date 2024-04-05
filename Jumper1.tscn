@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddq0gq0of4y3f"]
+
+[ext_resource type="PackedScene" uid="uid://kn6jque7v4r3" path="res://player.tscn" id="1_sb5wk"]
+[ext_resource type="PackedScene" uid="uid://dloddet8vjbky" path="res://platform.tscn" id="2_rg4a1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c58mp"]
+size = Vector2(966, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c8dg"]
+size = Vector2(20, 1400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bv620"]
+size = Vector2(20, 262)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, -1)
+
+[node name="Player" parent="." instance=ExtResource("1_sb5wk")]
+position = Vector2(-195, -737)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(3, 78)
+
+[node name="floor" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(27, -9)
+shape = SubResource("RectangleShape2D_c58mp")
+
+[node name="leftWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-445, -700)
+shape = SubResource("RectangleShape2D_5c8dg")
+
+[node name="rightWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(500, -699)
+shape = SubResource("RectangleShape2D_5c8dg")
+
+[node name="hieghtGab" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-579, -233)
+shape = SubResource("RectangleShape2D_bv620")
+
+[node name="platform" parent="." instance=ExtResource("2_rg4a1")]
+position = Vector2(-328, -109)
+
+[node name="platform" parent="platform" instance=ExtResource("2_rg4a1")]
+position = Vector2(-37, -288)
+
+[node name="platform2" parent="platform" instance=ExtResource("2_rg4a1")]
+position = Vector2(406, -162)
+
+[node name="platform3" parent="platform" instance=ExtResource("2_rg4a1")]
+position = Vector2(605, -395)
+
+[node name="platform4" parent="platform" instance=ExtResource("2_rg4a1")]
+position = Vector2(603, -477)
+
+[node name="platform4" parent="platform/platform4" instance=ExtResource("2_rg4a1")]
+position = Vector2(3, 0)
+
+[node name="platform5" parent="platform" instance=ExtResource("2_rg4a1")]
+position = Vector2(226, -504)
+
+[node name="platform6" parent="platform" instance=ExtResource("2_rg4a1")]
+position = Vector2(-50, -580)
+
+[node name="platform7" parent="platform" instance=ExtResource("2_rg4a1")]
+position = Vector2(361, -811)
+
+[node name="platform8" parent="platform" instance=ExtResource("2_rg4a1")]
+position = Vector2(694, -913)
+
+[node name="platform9" parent="platform" instance=ExtResource("2_rg4a1")]
+position = Vector2(278, -1140)

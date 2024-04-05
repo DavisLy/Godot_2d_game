@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://kn6jque7v4r3"]
+
+[ext_resource type="Script" path="res://player.cs" id="1_3dtep"]
+[ext_resource type="Texture2D" uid="uid://dym2b27mvqbqv" path="res://icon.svg" id="2_h172l"]
+
+[sub_resource type="Animation" id="Animation_7e73t"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkgq4"]
+_data = {
+"new_animation": SubResource("Animation_7e73t")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3dtep")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-86, -31)
+scale = Vector2(0.328125, 0.484375)
+texture = ExtResource("2_h172l")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-85, -23)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fkgq4")
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-86, -31)
+scale = Vector2(0.328125, 0.484375)
+polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
