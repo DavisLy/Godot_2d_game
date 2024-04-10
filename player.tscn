@@ -11,8 +11,9 @@ _data = {
 "new_animation": SubResource("Animation_7e73t")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("GRAVITY_TIMER")]
 script = ExtResource("1_3dtep")
+GRAVITY_TIMER = NodePath("gravityTimer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-86, -31)
@@ -30,4 +31,8 @@ libraries = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-86, -31)
 scale = Vector2(0.328125, 0.484375)
-polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
+polygon = PackedVector2Array(64, -59.6, 64, 64, 59.6, 64, -59, 64, -64, 64, -64, -59.6, -59, -63.9, 59, -64)
+
+[node name="gravityTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
