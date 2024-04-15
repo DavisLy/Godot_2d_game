@@ -18,8 +18,6 @@ public partial class player : CharacterBody2D
 	private bool inCoyoteTime = false;
 	private bool gravityChanged = false;
 
-	[Export]
-	private Timer GRAVITY_TIMER;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -37,12 +35,11 @@ public partial class player : CharacterBody2D
 		// Add the gravity.
 		velocity.Y += gravity * (float)delta;
 
-		Debug.Print(jumping.ToString());
+		// Debug.Print(jumping.ToString());
 		// Handle Jump.
-		if (Input.IsActionJustPressed("jump") && (IsOnFloor() || inCoyoteTime && !jumping))
+		if (Input.IsActionJustPressed("jump") && (IsOnFloor()))
 		{
 			velocity.Y = JumpVelocity;
-			jumping = true;
 		}
 
 		if (Input.IsActionJustPressed("reset"))
@@ -65,20 +62,7 @@ public partial class player : CharacterBody2D
 		Velocity = velocity;
 		MoveAndSlide();
 
-		if (!IsOnFloor() && !jumping)
-		{
-			inCoyoteTime = true;
-			GRAVITY_TIMER.Start();
-		}
-
-		if (IsOnFloor()){
-			jumping = false;
-		}
 	}
  
-	private void OnCoyoteTimerTimeout()
-	{
-		inCoyoteTime = false;
-	}
 }
 

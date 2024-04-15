@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://blhkymkarurnd"]
+
+[ext_resource type="Script" path="res://Abilities/CoyoteTime.cs" id="1_a3w64"]
+
+[node name="testing" type="Node" node_paths=PackedStringArray("CoyoteTimer")]
+script = ExtResource("1_a3w64")
+CoyoteTimer = NodePath("coyoteTimer")
+
+[node name="coyoteTimer" type="Timer" parent="."]
+wait_time = 0.33
+one_shot = true
+
+[connection signal="timeout" from="coyoteTimer" to="." method="CoyoteTimeout"]
