@@ -9,8 +9,8 @@ public partial class WallJump : Node
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
 	bool canDoubleJump = false;
-	public const float JumpVelocity = -750.0f;	
-	float wallJumpPushBack = 100.0f;
+	public const float JumpVelocity = -1000.0f;	
+	float wallJumpPushBack = 1000.0f;
 	float wallSlide = 500.0f;
 
 	// Called when the node enters the scene tree for the first time.
@@ -26,9 +26,7 @@ public partial class WallJump : Node
 
 	if (Input.IsActionJustPressed("jump"))
 	{
-		if (!Player.IsOnFloor())
-		{
-			if (Player.IsOnWallOnly() && Input.IsActionPressed("right"))
+		if (Player.IsOnWallOnly() && Input.IsActionPressed("right"))
 			{
 				velocity.Y = JumpVelocity;
 				velocity.X = -wallJumpPushBack;
@@ -38,7 +36,6 @@ public partial class WallJump : Node
 				velocity.Y = JumpVelocity;
 				velocity.X = wallJumpPushBack;
 			}
-		}
 	}
 
 	Player.Velocity = velocity; // Update Player's velocity

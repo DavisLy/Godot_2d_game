@@ -5,7 +5,7 @@ using System.Diagnostics;
 public partial class player : CharacterBody2D
 {
 	// Constants
-	public const float Speed = 350.0f;
+	public const float Speed = 550.0f;
 	public const float JumpVelocity = -750.0f;	
 	private const float TempGravity = 10000.0f;
 	private const float NormalGravity = 1000.0f;
