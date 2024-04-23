@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c51ioikcyypg3"]
+
+[ext_resource type="Script" path="res://Abilities/WallJump.cs" id="1_fcv6p"]
+
+[node name="WallJump" type="Node"]
+script = ExtResource("1_fcv6p")

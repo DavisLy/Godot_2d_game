@@ -5,7 +5,7 @@ using System.Diagnostics;
 public partial class player : CharacterBody2D
 {
 	// Constants
-	public const float Speed = 250.0f;
+	public const float Speed = 350.0f;
 	public const float JumpVelocity = -750.0f;	
 	private const float TempGravity = 10000.0f;
 	private const float NormalGravity = 1000.0f;
@@ -47,8 +47,6 @@ public partial class player : CharacterBody2D
 			Position = new Vector2(36, -650);
 		}
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
 		Vector2 direction = Input.GetVector("left", "right", "up", "down");
 		if (direction != Vector2.Zero)
 		{

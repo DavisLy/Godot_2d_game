@@ -1,23 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://dltpran5fotky"]
 
-[ext_resource type="Script" path="res://player.cs" id="1_j2e0h"]
-[ext_resource type="Texture2D" uid="uid://dym2b27mvqbqv" path="res://icon.svg" id="1_kkx3c"]
+[ext_resource type="Script" path="res://Abilities/player.cs" id="1_m8qs5"]
+[ext_resource type="Texture2D" uid="uid://dym2b27mvqbqv" path="res://Images/icon.svg" id="2_e4emj"]
 [ext_resource type="PackedScene" uid="uid://blhkymkarurnd" path="res://Abilities/CoyoteTime.tscn" id="3_x7ung"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3pk3"]
 size = Vector2(240, 240.181)
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_j2e0h")
+script = ExtResource("1_m8qs5")
 
 [node name="Sprite2D" type="Polygon2D" parent="."]
 scale = Vector2(0.75, 1.241)
-texture = ExtResource("1_kkx3c")
+texture = ExtResource("2_e4emj")
 polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
 uv = PackedVector2Array(128, 4.4, 128, 123, 123.6, 128, 5, 128, 0, 123.6, 0, 4.4, 5, 0.1, 123, 0)
 polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7)]
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
