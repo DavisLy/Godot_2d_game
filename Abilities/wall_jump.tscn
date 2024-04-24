@@ -4,3 +4,7 @@
 
 [node name="WallJump" type="Node"]
 script = ExtResource("1_fcv6p")
+
+[node name="left" type="RayCast2D" parent="."]
+
+[node name="right" type="RayCast2D" parent="."]

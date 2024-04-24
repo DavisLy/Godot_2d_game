@@ -5,8 +5,8 @@ using System.Diagnostics;
 public partial class player : CharacterBody2D
 {
 	// Constants
-	public const float Speed = 550.0f;
-	public const float JumpVelocity = -750.0f;	
+	public const float Speed = 900.0f;
+	public const float JumpVelocity = -1300.0f;	
 	private const float TempGravity = 10000.0f;
 	private const float NormalGravity = 1000.0f;
 	private const float GravityChangeDuration = .2f;
@@ -33,13 +33,13 @@ public partial class player : CharacterBody2D
 
 	
 		// Add the gravity.
-		velocity.Y += gravity * (float)delta;
+		velocity.Y += (float)1.1*(gravity * (float)delta);
 
 		// Debug.Print(jumping.ToString());
 		// Handle Jump.
 		if (Input.IsActionJustPressed("jump") && (IsOnFloor()))
 		{
-			velocity.Y = JumpVelocity;
+			velocity.Y = JumpVelocity+10000;
 		}
 
 		if (Input.IsActionJustPressed("reset"))
