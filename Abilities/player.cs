@@ -44,7 +44,7 @@ public partial class player : CharacterBody2D
 
 		if (Input.IsActionJustPressed("reset"))
 		{
-			Position = new Vector2(36, -650);
+			Position = new Vector2(-3244, -18);
 		}
 
 		Vector2 direction = Input.GetVector("left", "right", "up", "down");
@@ -62,5 +62,9 @@ public partial class player : CharacterBody2D
 
 	}
  
+private void _on_area_2d_body_entered(Node2D CharacterBody2D)
+{
+	Position = new Vector2(0, 0);
+	GD.Print("hi");
 }
-
+}
