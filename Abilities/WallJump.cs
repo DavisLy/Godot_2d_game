@@ -13,7 +13,7 @@ public partial class WallJump : Node
 
 	bool canDoubleJump = false;
 	bool isWallSliding = false;
-	public const float wallJumpVelocity = -1200.0f;
+	public const float wallJumpVelocity = -1000.0f;
 	float wallJumpPushBack = -1000.0f;
 	float wallSlidingGravity = 500.0f;
 	public const float JumpVelocity = -1300.0f;	
@@ -37,13 +37,13 @@ public partial class WallJump : Node
 			if (Player.IsOnWallOnly() && Input.IsActionPressed("right"))
 			{
 				velocity.Y = wallJumpVelocity;
-				velocity.X = -wallJumpPushBack;
+				//velocity.X = -wallJumpPushBack;
 				GD.Print("wall jump1");
 			}
 			else if (Player.IsOnWallOnly() && Input.IsActionPressed("left"))
 			{
 				velocity.Y = wallJumpVelocity;
-				velocity.X = wallJumpPushBack;
+				//velocity.X = wallJumpPushBack;
 				GD.Print("wall jump");
 			}
 			wallSlide(delta);

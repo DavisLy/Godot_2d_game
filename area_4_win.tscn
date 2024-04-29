@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dktyuh2oignya"]
+
+[ext_resource type="Script" path="res://Area4Win.cs" id="1_owjyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b0sv"]
+size = Vector2(108.5, 20)
+
+[node name="Area4Win" type="Area2D"]
+script = ExtResource("1_owjyf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 7
+shape = SubResource("RectangleShape2D_7b0sv")

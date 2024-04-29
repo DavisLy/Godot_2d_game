@@ -46,7 +46,10 @@ public partial class player : CharacterBody2D
 		{
 			Position = new Vector2(-3244, -18);
 		}
-
+		if (Input.IsActionJustPressed("area2"))
+		{
+			Position = new Vector2(-3100, -3100);
+		}
 		Vector2 direction = Input.GetVector("left", "right", "up", "down");
 		if (direction != Vector2.Zero)
 		{
@@ -64,7 +67,26 @@ public partial class player : CharacterBody2D
  
 private void _on_area_2d_body_entered(Node2D CharacterBody2D)
 {
-	Position = new Vector2(0, 0);
-	GD.Print("hi");
+	Position = new Vector2(-3244, -18);
+	GD.Print("area1");
+}
+private void _on_area_2_body_entered(Node2D CharacterBody2D)
+{
+	 Position = new Vector2(-2300, -205);
+	GD.Print("area2");
+}
+private void _on_area_3_body_entered(Node2D CharacterBody2D)
+{
+	 Position = new Vector2(-1315, -5875);
+	GD.Print("area3");
+}
+
+private void _on_area_4_win_body_entered(Node2D CharacterBody2D)
+{
+	Position = new Vector2(1650, -750);
+	GD.Print("area4");
 }
 }
+
+
+
